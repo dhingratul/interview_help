@@ -6,15 +6,19 @@
 def cipher_match(str1, str2):
   return string_to_cipher(str1) == string_to_cipher(str2)
 
-def string_to_cipher(str):
+def string_to_cipher(string):
   used_chars = {}
-  cipher = ""
+  cipher = []
   character_count = 0
-  for c in str:
+  for c in string:
     dict_entry = used_chars.get(c)
     if dict_entry:
-      cipher += dict_entry
+      cipher.append(dict_entry)
     else:
       used_chars[c] = character_count
       character_count += 1
   return cipher
+
+str1 = "aabb" 
+str2 = "ccdd"
+cipher_match(str1, str2)
